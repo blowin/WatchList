@@ -32,9 +32,10 @@ using (var scope = app.Services.CreateScope())
         .RuleFor(e => e.Id, f => f.Random.Guid())
         .RuleFor(e => e.Title, f => f.Commerce.Product())
         .RuleFor(e => e.Description, f => f.Lorem.Paragraphs().OrNull(f))
-        .RuleFor(e => e.Status, f => f.PickRandom(Status.List.Skip(1)))
-        .RuleFor(e => e.Type, f => f.PickRandom(WatchItemType.List.Skip(1)))
+        .RuleFor(e => e.Status, f => f.PickRandom(Status.List.Where(e => e != Status.Unknown)))
+        .RuleFor(e => e.Type, f => f.PickRandom(WatchItemType.List.Where(e => e != WatchItemType.Unknown)))
         .RuleFor(e => e.Rating, f => new Rating(f.Random.Float(0, 10)))
+        .RuleFor(e => e.ReleaseDate, f => f.Date.PastDateOnly().OrNull(f, 0.2f))
         .RuleFor(e => e.Genre, f =>
         {
             return Enumerable.Range(0, f.Random.Number(1, 5))
