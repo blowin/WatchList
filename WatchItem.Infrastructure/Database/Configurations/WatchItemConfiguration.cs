@@ -2,16 +2,20 @@
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WatchList.Domain.WatchItems;
+using WatchList.Domain.WatchItems.Entity;
 
 namespace WatchItem.Infrastructure.Database.Configurations;
 
-public sealed class WatchItemConfiguration : EntityConfigurationBase<WatchList.Domain.WatchItems.WatchItem>
+public sealed class WatchItemConfiguration : EntityConfigurationBase<WatchList.Domain.WatchItems.Entity.WatchItem>
 {
-    protected override void ConfigureCore(EntityTypeBuilder<WatchList.Domain.WatchItems.WatchItem> builder)
+    protected override void ConfigureCore(EntityTypeBuilder<WatchList.Domain.WatchItems.Entity.WatchItem> builder)
     {
         builder.Property(e => e.Title).IsRequired().HasMaxLength(128);
         builder.Property(e => e.Description);
-        builder.Property(e => e.Rating);
+        builder.Property(e => e.Rating)
+            .HasConversion<float?>(rating => rating,
+                rating => rating != null ? new Rating(rating.Value) : null);
+        
         builder.Property(e => e.ReleaseDate);
         
         builder.Property(e => e.Image)

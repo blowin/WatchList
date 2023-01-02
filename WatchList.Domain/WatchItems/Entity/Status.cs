@@ -1,6 +1,6 @@
 ﻿using Ardalis.SmartEnum;
 
-namespace WatchList.Domain.WatchItems;
+namespace WatchList.Domain.WatchItems.Entity;
 
 public sealed class Status : SmartEnum<Status>
 {

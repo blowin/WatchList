@@ -1,6 +1,6 @@
 ﻿namespace WatchList.Domain;
 
-public interface IRepository<T>
+public interface IRepository<T> : IScoped
     where T : Entity
 {
     Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);

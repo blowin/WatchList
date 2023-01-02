@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WatchItem.Infrastructure.Database;
 using WatchItem.Infrastructure.WatchItems;
 using WatchList.Domain.WatchItems;
+using WatchList.Domain.WatchItems.Repository;
 
 namespace WatchItem.Tests;
 

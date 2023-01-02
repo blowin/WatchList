@@ -5,7 +5,7 @@ namespace WatchItem.Infrastructure.Database;
 
 public sealed class AppDbContext : DbContext
 {
-    public DbSet<WatchList.Domain.WatchItems.WatchItem> WatchItems { get; private set; } = null!;
+    public DbSet<WatchList.Domain.WatchItems.Entity.WatchItem> WatchItems { get; private set; } = null!;
 
     public AppDbContext(DbContextOptions options)
         : base(options)
