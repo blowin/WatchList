@@ -26,6 +26,6 @@ public class WatchItem : Entity
     
     // EF core
 #pragma warning disable CS8618
-    private WatchItem(){}
+    public WatchItem(){}
 #pragma warning restore CS8618
 }
