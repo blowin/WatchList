@@ -1,11 +1,10 @@
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
-using WatchItem.Infrastructure.Database;
-using WatchItem.Infrastructure.WatchItems;
-using WatchList.Domain.WatchItems;
 using WatchList.Domain.WatchItems.Repository;
+using WatchList.Infrastructure.Database;
+using WatchList.Infrastructure.WatchItems;
 
-namespace WatchItem.Tests;
+namespace WatchList.Tests;
 
 public class ServiceCollectionTest : IClassFixture<DiProvider>
 {

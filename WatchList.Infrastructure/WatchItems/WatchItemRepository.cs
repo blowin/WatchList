@@ -1,9 +1,9 @@
-﻿using WatchItem.Infrastructure.Database;
-using WatchItem.Infrastructure.Extensions;
-using WatchList.Domain.WatchItems.Repository;
+﻿using WatchList.Domain.WatchItems.Repository;
+using WatchList.Infrastructure.Database;
+using WatchList.Infrastructure.Extensions;
 using X.PagedList;
 
-namespace WatchItem.Infrastructure.WatchItems;
+namespace WatchList.Infrastructure.WatchItems;
 
 public sealed class WatchItemRepository : Repository<WatchList.Domain.WatchItems.Entity.WatchItem>, IWatchItemRepository
 {

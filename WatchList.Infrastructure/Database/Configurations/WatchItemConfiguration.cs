@@ -1,10 +1,9 @@
 ﻿using System.Text.Json;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WatchList.Domain.WatchItems;
 using WatchList.Domain.WatchItems.Entity;
 
-namespace WatchItem.Infrastructure.Database.Configurations;
+namespace WatchList.Infrastructure.Database.Configurations;
 
 public sealed class WatchItemConfiguration : EntityConfigurationBase<WatchList.Domain.WatchItems.Entity.WatchItem>
 {

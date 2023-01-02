@@ -2,11 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Scrutor;
-using WatchItem.Infrastructure.Database;
 using WatchList.Domain;
 using WatchList.Domain.WatchItems;
+using WatchList.Infrastructure.Database;
 
-namespace WatchItem.DependencyInjection;
+namespace WatchList.DependencyInjection;
 
 public static class ServiceCollectionExt
 {

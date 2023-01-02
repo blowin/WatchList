@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WatchItem.Infrastructure.Database;
 using WatchList.Domain;
+using WatchList.Infrastructure.Database;
 
-namespace WatchItem.Infrastructure;
+namespace WatchList.Infrastructure;
 
 public class Repository<T> : IRepository<T> 
     where T : Entity

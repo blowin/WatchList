@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using WatchItem.DependencyInjection;
+using WatchList.DependencyInjection;
 
-namespace WatchItem.Tests;
+namespace WatchList.Tests;
 
 public class DiProvider : IDisposable
 {
@@ -11,7 +11,7 @@ public class DiProvider : IDisposable
     public DiProvider()
     {
         ServiceProvider = new ServiceCollection()
-            .AddAppServices(builder => builder.UseSqlite("DataSource=:memory:"))
+            .AddAppServices(builder => SqliteDbContextOptionsBuilderExtensions.UseSqlite(builder, "DataSource=:memory:"))
             .BuildServiceProvider(new ServiceProviderOptions
             {
                 ValidateScopes = true,

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SmartEnum.EFCore;
 
-namespace WatchItem.Infrastructure.Database;
+namespace WatchList.Infrastructure.Database;
 
 public sealed class AppDbContext : DbContext
 {

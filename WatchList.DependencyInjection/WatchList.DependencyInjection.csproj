@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\WatchItem.Infrastructure\WatchItem.Infrastructure.csproj" />
+      <ProjectReference Include="..\WatchList.Infrastructure\WatchList.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>

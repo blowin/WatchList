@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
-using WatchItem.DependencyInjection;
-using WatchItem.Infrastructure.Database;
+using WatchList.DependencyInjection;
 using WatchList.Domain.WatchItems;
 using WatchList.Domain.WatchItems.Entity;
+using WatchList.Infrastructure.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,7 @@
 ﻿using WatchList.Domain;
 using X.PagedList;
 
-namespace WatchItem.Infrastructure.Extensions;
+namespace WatchList.Infrastructure.Extensions;
 
 public static class QueryableExt
 {

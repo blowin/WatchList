@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WatchList.Domain;
 
-namespace WatchItem.Infrastructure.Database.Configurations;
+namespace WatchList.Infrastructure.Database.Configurations;
 
 public abstract class EntityConfigurationBase<T> : IEntityTypeConfiguration<T> 
     where T : Entity

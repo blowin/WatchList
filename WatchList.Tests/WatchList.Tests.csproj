@@ -6,6 +6,10 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <AssemblyName>WatchList.Tests</AssemblyName>
+
+        <RootNamespace>WatchList.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -25,8 +29,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\WatchItem.DependencyInjection\WatchItem.DependencyInjection.csproj" />
-      <ProjectReference Include="..\WatchItem.Infrastructure\WatchItem.Infrastructure.csproj" />
+      <ProjectReference Include="..\WatchList.DependencyInjection\WatchList.DependencyInjection.csproj" />
+      <ProjectReference Include="..\WatchList.Infrastructure\WatchList.Infrastructure.csproj" />
       <ProjectReference Include="..\WatchList.Domain\WatchList.Domain.csproj" />
     </ItemGroup>
 

@@ -2,11 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchList.Domain", "WatchList.Domain\WatchList.Domain.csproj", "{F58D5F21-95CC-4835-8045-CE951E61D736}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchItem.Infrastructure", "WatchItem.Infrastructure\WatchItem.Infrastructure.csproj", "{BB2BB30E-D530-47B8-BA42-90518DB85178}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchList.Infrastructure", "WatchList.Infrastructure\WatchList.Infrastructure.csproj", "{BB2BB30E-D530-47B8-BA42-90518DB85178}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchItem.DependencyInjection", "WatchItem.DependencyInjection\WatchItem.DependencyInjection.csproj", "{B1139767-1BA2-4CC9-9DD5-AC5B7C02EAF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchList.DependencyInjection", "WatchList.DependencyInjection\WatchList.DependencyInjection.csproj", "{B1139767-1BA2-4CC9-9DD5-AC5B7C02EAF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchItem.Tests", "WatchItem.Tests\WatchItem.Tests.csproj", "{E12F82C6-1FEB-47D6-AA19-0AED9B24FE9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchList.Tests", "WatchList.Tests\WatchList.Tests.csproj", "{E12F82C6-1FEB-47D6-AA19-0AED9B24FE9E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{0B1DD17B-A1F4-4653-97AB-09DAE79C1B37}"
 EndProject

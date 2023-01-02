@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WatchItem.DependencyInjection\WatchItem.DependencyInjection.csproj" />
+    <ProjectReference Include="..\WatchList.DependencyInjection\WatchList.DependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

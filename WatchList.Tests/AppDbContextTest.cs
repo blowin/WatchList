@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-using WatchItem.Infrastructure.Database;
+using WatchList.Infrastructure.Database;
 
-namespace WatchItem.Tests;
+namespace WatchList.Tests;
 
 public class AppDbContextTest : IClassFixture<DiProvider>
 {
