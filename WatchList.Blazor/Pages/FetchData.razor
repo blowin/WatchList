@@ -44,6 +44,12 @@ else
             </MudSelect>
         </MudItem>
         <MudItem xs="4">
+            <MudDatePicker Label="Release date from" Editable="true" @bind-Date="_filter.ReleaseDateFrom"/>
+        </MudItem>
+        <MudItem xs="4">
+            <MudDatePicker Label="Release date to" Editable="true" @bind-Date="_filter.ReleaseDateTo"/>
+        </MudItem>
+        <MudItem xs="4">
             <MudButton OnClick="SearchAsync" Color="Color.Primary" Variant="Variant.Filled">Search</MudButton>
         </MudItem>
     </MudGrid>
