@@ -9,7 +9,7 @@ public class Entity
         WriteIndented = true
     };
 
-    public Guid Id { get; private set; }
+    public Guid Id { get; internal set; }
 
     public override string ToString() => JsonSerializer.Serialize(this, JsonSerializerOptions);
 }

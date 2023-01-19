@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Scrutor;
 using WatchList.Domain;
-using WatchList.Domain.WatchItems;
+using WatchList.Domain.WatchItems.Services.WatchItemUpdateService_;
 using WatchList.Infrastructure.Database;
 
 namespace WatchList.DependencyInjection;
@@ -43,6 +43,6 @@ public static class ServiceCollectionExt
         }
 
         yield return typeof(AppDbContext).Assembly;
-        yield return typeof(WatchItemService).Assembly;
+        yield return typeof(WatchItemUpdateService).Assembly;
     }
 }

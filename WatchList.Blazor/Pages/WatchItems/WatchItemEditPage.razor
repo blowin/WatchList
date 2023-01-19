@@ -1,0 +1,113 @@
+﻿@page "/WatchItemEditPage/{Id:guid}"
+
+@using WatchList.Domain.WatchItems.Services.WatchItemUpdateService_
+@using WatchList.Domain.WatchItems.Entity
+@using Microsoft.AspNetCore.Components
+
+@inject WatchItemUpdateService Service
+@inject NavigationManager Navigation
+
+<MudTextField @bind-Value="_request.Title" Label="Title" Variant="Variant.Text"/>
+
+<MudTextField @bind-Value="_request.Description" Label="Description" Variant="Variant.Text" Lines="5" Class="pt-3"/>
+
+<MudDatePicker Label="Release date" Editable="true" @bind-Date="_request.ReleaseDate" Class="pt-3"/>
+
+<MudPaper Class="px-5 py-5">
+    <MudGrid>
+        <MudItem xs="12">
+            <MudTable Items="@_request.Genre" Hover="true" SortLabel="Sort By" Elevation="0">
+                <HeaderContent>
+                    <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<string, object>(x=>x)">Genre</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel T="string">Actions</MudTableSortLabel></MudTh>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd DataLabel="Genre">@context</MudTd>
+                    <MudTd DataLabel="Actions">
+                        <MudIconButton OnClick="@(() => _request.Genre.Remove(@context))" Icon="@Icons.Material.Filled.Delete" aria-label="Delete"></MudIconButton>
+                    </MudTd>
+                </RowTemplate>
+            </MudTable>
+        </MudItem>
+        <MudItem xs="8"><MudTextField @bind-Value="_genre" Label="Genre" Variant="Variant.Text"/></MudItem>
+        <MudItem xs="4"><MudButton OnClick="@AddGenre" Color="Color.Primary" Variant="Variant.Filled">Add</MudButton></MudItem>
+    </MudGrid>
+</MudPaper>
+
+<MudSelect T="Status" @bind-Value="_request.Status" Label="Status" Variant="Variant.Outlined" AnchorOrigin="Origin.BottomCenter" Class="pt-3">
+    @foreach (var status in Status.List)
+    {
+        if (status != Status.Unknown)
+        {
+            <MudSelectItem Value="@status"/>
+        }
+    }
+</MudSelect>
+
+<MudSelect T="WatchItemType" @bind-Value="_request.Type" Label="Type" Variant="Variant.Outlined" AnchorOrigin="Origin.BottomCenter" Class="pt-3">
+    @foreach (var type in WatchItemType.List)
+    {
+        if (type != WatchItemType.Unknown)
+        {
+            <MudSelectItem Value="@type"/>
+        }
+    }
+</MudSelect>
+
+<MudPaper Class="d-flex align-end flex-grow-1 gap-4 pt-3" Elevation="0">
+    <MudButton Class="d-flex flex-1" Color="Color.Primary" Variant="Variant.Filled" OnClick="@SaveAsync">Save</MudButton>
+    <MudButton Class="d-flex flex-1" Color="Color.Secondary" Variant="Variant.Filled" OnClick="@Cancel">Cancel</MudButton>
+</MudPaper>
+
+@if (_errors.Count > 0)
+{
+    <MudPaper Class="py-5 px-5">
+        @foreach (var error in _errors)
+        {
+            <MudAlert Severity="Severity.Error">@error</MudAlert>
+        }
+    </MudPaper>
+}
+
+@code {
+    private List<string> _errors = new List<string>();
+    private WatchItemUpdateRequest _request = null!;
+    private string? _genre;
+    
+    [Parameter]
+    public Guid Id { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        _request = await Service.CreateRequestAsync(Id);
+    }
+
+    private async Task SaveAsync()
+    {
+        _errors.Clear();
+        
+        var result = await Service.UpdateAsync(_request);
+        if (result.IsValid)
+        {
+            Navigation.NavigateTo(Navigation.BaseUri);
+            return;
+        }
+
+        var errors = result.Errors.Select(e => e.ErrorMessage);
+        _errors.AddRange(errors);
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo(Navigation.BaseUri);
+    }
+
+    private void AddGenre()
+    {
+        if(string.IsNullOrWhiteSpace(_genre))
+            return;
+
+        _request.Genre.Add(_genre.Trim());
+    }
+
+}

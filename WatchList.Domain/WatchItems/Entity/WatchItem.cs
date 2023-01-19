@@ -2,14 +2,14 @@
 
 public class WatchItem : Domain.Entity
 {
-    public string Title { get; private set; }
-    public string? Description { get; private set; }
-    public HashSet<string> Genre { get; private set; }
-    public Rating? Rating { get; private set; }
-    public DateOnly? ReleaseDate { get; private set; }
-    public Status Status { get; private set; }
-    public ImageBase64? Image { get; private set; }
-    public WatchItemType Type { get; private set; }
+    public string Title { get; internal set; }
+    public string? Description { get; internal set; }
+    public HashSet<string> Genre { get; internal set; }
+    public Rating? Rating { get; internal set; }
+    public DateOnly? ReleaseDate { get; internal set; }
+    public Status Status { get; internal set; }
+    public ImageBase64? Image { get; internal set; }
+    public WatchItemType Type { get; internal set; }
 
     public WatchItem(string title, string? description, HashSet<string> genre, Rating? rating, DateOnly releaseDate, 
         Status status, ImageBase64 image, WatchItemType type)

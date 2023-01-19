@@ -2,9 +2,19 @@
 
 public readonly struct Rating : IEquatable<Rating>, IComparable<Rating>, IComparable
 {
+    public const int MaxValue = 10;
+    public const int MinValue = 0;
+    
     private readonly float _value;
 
-    public Rating(float value) => _value = value;
+    public Rating(float value)
+    {
+        if (value < MinValue)
+            throw new ArgumentException("Value should be great or equal 0");
+        if (value > MaxValue)
+            throw new ArgumentException("Value should be less than 10");
+        _value = value;
+    }
 
     public static bool operator <(Rating lft, Rating rgt) => lft.CompareTo(rgt) < 0;
     public static bool operator >(Rating lft, Rating rgt) => lft.CompareTo(rgt) > 0;
